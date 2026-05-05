@@ -1,0 +1,45 @@
+# =========================
+# IDEs and Editors
+# =========================
+.vscode/
+*.swp
+*.swo
+
+# =========================
+# Operating System Files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Python & uv
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+# Ignore uv virtual environments (uv creates .venv by default)
+.venv/
+venv/
+env/
+
+# =========================
+# C# / .NET (Future-proofing)
+# =========================
+[Bb]in/
+[Oo]bj/
+.vs/
+*.user
+
+# =========================
+# C++ (Future-proofing)
+# =========================
+build/
+*.o
+*.out
+*.exe
+*.dll
+*.so
+*.dylib
