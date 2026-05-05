@@ -1,0 +1,15 @@
+pipeline {
+    agent {
+        docker { image 'python:3.12-slim' }
+    }
+    stages {
+        stage('Build') {
+            steps {
+                dir('python/simple-math-uv') {
+                    sh 'pip install uv hatchling'
+                    sh 'uv build'
+                }
+            }
+        }
+    }
+}
