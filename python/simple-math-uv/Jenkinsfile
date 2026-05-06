@@ -12,7 +12,7 @@ pipeline {
         stage('Lint') {
             steps {
                 dir('python/simple-math-uv') {
-                    sh 'uv run ruff check'
+                    sh 'uvx ruff check'
                 }
             }
         }
@@ -34,6 +34,11 @@ pipeline {
                     sh 'uv build'
                 }
             }
+            post {
+                success {
+                    archiveArtifacts artifacts: 'python/simple-math-uv/dist/*', fingerprint: true
+                }
+            }        
         }
     }
 }
