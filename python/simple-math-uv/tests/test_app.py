@@ -1,3 +1,5 @@
+import os
+
 # test_app.py
 from simple_math_uv.app import add_numbers, subtract_numbers
 

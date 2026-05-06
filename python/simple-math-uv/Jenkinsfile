@@ -9,6 +9,13 @@ pipeline {
         UV_CACHE_DIR = "${WORKSPACE}/.uv-cache"
     }
     stages {
+        stage('Lint') {
+            steps {
+                dir('python/simple-math-uv') {
+                    sh 'uv run ruff check'
+                }
+            }
+        }
         stage('Test') {
             steps {
                 dir('python/simple-math-uv') {
