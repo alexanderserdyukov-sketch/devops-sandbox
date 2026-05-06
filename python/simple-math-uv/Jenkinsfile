@@ -5,6 +5,9 @@ pipeline {
             dir 'python/simple-math-uv'
         }
     }
+    environment {
+        UV_CACHE_DIR = "${WORKSPACE}/.uv-cache"
+    }
     stages {
         stage('Test and Build') {
             steps {
