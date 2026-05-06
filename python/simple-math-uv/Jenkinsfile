@@ -2,6 +2,7 @@ pipeline {
     agent {
         dockerfile {
             filename 'Dockerfile.build'
+            dir 'python/simple-math-uv'
         }
     }
     stages {
