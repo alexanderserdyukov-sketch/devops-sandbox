@@ -6,7 +6,9 @@ pipeline {
         }
     }
     environment {
-        UV_CACHE_DIR = "${WORKSPACE}/.uv-cache"
+        UV_CACHE_DIR    = "${WORKSPACE}/.uv-cache"
+        UV_TOOL_DIR     = "${WORKSPACE}/.uv-tool"
+        UV_TOOL_BIN_DIR = "${WORKSPACE}/.uv-tool-bin"
     }
     stages {
         stage('Lint') {
