@@ -4,7 +4,7 @@ pipeline {
         stage('Build') {
             steps {
                 dir('python/simple-math-uv') {
-                    sh '/root/.local/bin/uv build'
+                    sh 'uv build'
                 }
             }
         }
