@@ -9,10 +9,21 @@ pipeline {
         UV_CACHE_DIR = "${WORKSPACE}/.uv-cache"
     }
     stages {
-        stage('Test and Build') {
+        stage('Test') {
             steps {
                 dir('python/simple-math-uv') {
-                    sh 'uv run pytest'
+                    sh 'uv run pytest --junitxml=results.xml'
+                }
+            }
+            post {
+                always {
+                    junit 'python/simple-math-uv/results.xml'
+                }
+            }
+        }
+        stage('Build') {
+            steps {
+                dir('python/simple-math-uv') {
                     sh 'uv build'
                 }
             }
