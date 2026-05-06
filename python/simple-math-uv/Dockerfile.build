@@ -1,0 +1,3 @@
+FROM ghcr.io/astral-sh/uv:python3.12-alpine
+# Add any custom system tools your project requires
+RUN apk add --no-cache build-base
