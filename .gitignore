@@ -43,3 +43,5 @@ build/
 *.dll
 *.so
 *.dylib
+
+*.bak

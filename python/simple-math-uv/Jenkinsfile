@@ -1,9 +1,14 @@
 pipeline {
-    agent any
+    agent {
+        dockerfile {
+            filename 'Dockerfile.build'
+        }
+    }
     stages {
-        stage('Build') {
+        stage('Test and Build') {
             steps {
                 dir('python/simple-math-uv') {
+                    sh 'uv run pytest'
                     sh 'uv build'
                 }
             }
